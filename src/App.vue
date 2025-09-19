@@ -17,8 +17,8 @@ const logoWidth = 50
 </script>
 
 <template>
-  <SearchFilm ></SearchFilm>
-  <LoginForm ></LoginForm>
+  <SearchFilm></SearchFilm>
+  <LoginForm></LoginForm>
   <h1>
     I {{likesVue ? "love" : "hate"}}
     <img :src="logo" :style="{ width: logoWidth + 'px' }"/>
