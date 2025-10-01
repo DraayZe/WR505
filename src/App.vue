@@ -1,13 +1,4 @@
 <script setup>
-import { ref } from "vue";
-import LoginForm from "@/components/LoginForm.vue";
-import SearchFilm from "@/components/SearchFilm.vue";
-
-const loggedIn = ref(false);
-
-const handleLogin = () => {
-  loggedIn.value = true;
-};
 </script>
 
 <template>
@@ -15,13 +6,8 @@ const handleLogin = () => {
     Mon header
   </header>
 
+  <!-- Ici s'affichera LoginForm ou SearchFilm selon la route -->
   <router-view />
-
-<!--  Si pas connecté, formulaire -->
-  <LoginForm v-if="!loggedIn" @logged="handleLogin" />
-
-  <!-- Si connecté, recherche de films -->
-  <SearchFilm v-else />
 
   <footer>
     Mon footer

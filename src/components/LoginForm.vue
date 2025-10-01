@@ -1,14 +1,15 @@
 <script setup>
 import { ref } from "vue";
+import { useRouter } from "vue-router";
 
 const email = ref("");
 const password = ref("");
-
-const emit = defineEmits(["logged"]);
+const router = useRouter();
 
 const login = () => {
   if (email.value && password.value) {
-    emit("logged");
+    // après login réussi, redirection vers /search
+    router.push("/search");
   }
 };
 </script>
