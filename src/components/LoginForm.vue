@@ -8,7 +8,6 @@ const router = useRouter();
 
 const login = () => {
   if (email.value && password.value) {
-    // après login réussi, redirection vers /search
     router.push("/search");
   }
 };
