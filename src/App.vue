@@ -1,9 +1,26 @@
 <script setup>
+import { useSession } from "@/stores/session";
+import { useRouter } from "vue-router";
+
+const session = useSession();
+const router = useRouter();
+
+function handleLogout() {
+  session.logout();
+  router.push("/");
+}
 </script>
 
 <template>
   <header>
-    Mon header
+    <div class="header-content">
+      <h1>Mon header</h1>
+
+      <div v-if="session.loggedIn" class="user-info">
+        <span>👋 Bonjour, {{ session.user?.firstname }}</span>
+        <button @click="handleLogout">Se déconnecter</button>
+      </div>
+    </div>
   </header>
 
   <transition name="slide-left" mode="out-in">

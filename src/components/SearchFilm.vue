@@ -5,6 +5,9 @@ import Film from "@/components/Film.vue";
 const query = ref("");
 const films = ref([]);
 
+import { useSession } from '@/stores/session'
+const session = useSession()
+
 function searchFilms() {
   films.value = [
     {
@@ -58,7 +61,11 @@ onMounted(() => {
 });
 </script>
 
-<template>
+<template> <div>
+  <p v-if="session.loggedIn">✅ Connecté</p>
+  <p v-else>❌ Non connecté</p>
+</div>
+
   <div id="search-film">
     <form @submit.prevent="searchFilms">
       <label for="search">Rechercher :</label>
