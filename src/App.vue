@@ -17,7 +17,8 @@ function handleLogout() {
       <h1>Mon header</h1>
 
       <div v-if="session.loggedIn" class="user-info">
-        <span>👋 Bonjour, {{ session.user?.firstname }}</span>
+        <span style="padding: 10px">👋 Bonjour, {{ session.user?.firstname }} </span>
+        <span>{{session.user?.email}}</span>
         <button @click="handleLogout">Se déconnecter</button>
       </div>
     </div>
